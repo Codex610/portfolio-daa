@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajneesh Chauhan | Resume — Data Analyst</title>
+<meta name="description" content="Resume of Rajneesh Chauhan — Entry-level Data Analyst skilled in Python, SQL, Tableau, Power BI with proven business impact.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
+<style>
+  :root {
+    --color-bg: #0f0f13;
+    --color-surface: #18181f;
+    --color-surface-2: #1e1e28;
+    --color-accent: #ffd000;
+    --color-accent-dark: #e6bb00;
+    --color-accent-glow: rgba(255, 208, 0, 0.08);
+    --color-text: #f0f0f0;
+    --color-text-secondary: #a0a0b0;
+    --color-text-muted: #6a6a7a;
+    --color-border: rgba(255, 255, 255, 0.06);
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 16px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--color-accent); color: #000; }
+
+  a { color: var(--color-accent); text-decoration: none; transition: color var(--transition); }
+  a:hover { color: var(--color-accent-dark); }
+
+  /* ---- Top Bar ---- */
+  .top-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(15,15,19,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.75rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .top-bar-left { display: flex; align-items: center; gap: 0.75rem; }
+  .top-bar-left a {
+    font-family: var(--font-heading); font-weight: 800; font-size: 1.1rem;
+    color: var(--color-text); display: flex; align-items: center; gap: 0.4rem;
+  }
+  .top-bar-left .logo-icon {
+    width: 30px; height: 30px; background: var(--color-accent); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 0.85rem; color: #000; transform: rotate(-5deg);
+  }
+  .top-bar-right { display: flex; gap: 0.75rem; }
+
+  .btn-download, .btn-back {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.55rem 1.4rem; border-radius: 999px;
+    font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; border: 2px solid transparent; transition: all var(--transition);
+    text-decoration: none;
+  }
+  .btn-download {
+    background: var(--color-accent); color: #000; border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(255,208,0,0.2);
+  }
+  .btn-download:hover {
+    transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,208,0,0.35);
+    color: #000;
+  }
+  .btn-back {
+    background: transparent; color: var(--color-text); border-color: rgba(255,255,255,0.15);
+  }
+  .btn-back:hover {
+    background: rgba(255,255,255,0.05); transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.25); color: var(--color-text);
+  }
+
+  /* ---- Resume Container ---- */
+  .resume-wrapper {
+    max-width: 860px; margin: 5.5rem auto 3rem; padding: 0 1.5rem;
+  }
+
+  .resume-paper {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 3rem 3.5rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resume-paper::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark), var(--color-accent));
+  }
+
+  /* ---- Header ---- */
+  .resume-header { text-align: center; margin-bottom: 1.75rem; }
+  .resume-name {
+    font-family: var(--font-heading); font-size: 2.2rem; font-weight: 900;
+    letter-spacing: -0.02em; margin-bottom: 0.15rem;
+  }
+  .resume-subtitle {
+    font-size: 0.95rem; color: var(--color-accent); font-weight: 500;
+    letter-spacing: 0.04em; margin-bottom: 0.6rem;
+  }
+  .resume-contact {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.4rem 1.25rem; font-size: 0.82rem; color: var(--color-text-secondary);
+  }
+  .resume-contact a { color: var(--color-accent); }
+  .resume-contact .sep { color: var(--color-text-muted); }
+
+  /* ---- Section ---- */
+  .resume-section { margin-bottom: 1.5rem; }
+  .resume-section-title {
+    font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-text);
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--color-accent);
+    margin-bottom: 0.85rem;
+  }
+
+  /* ---- Summary ---- */
+  .resume-summary {
+    font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.7;
+  }
+
+  /* ---- Skills grid ---- */
+  .skills-table { display: grid; gap: 0.35rem; }
+  .skill-row {
+    display: flex; gap: 0.75rem; font-size: 0.85rem; line-height: 1.65;
+  }
+  .skill-label {
+    font-weight: 700; color: var(--color-text); min-width: 170px; flex-shrink: 0;
+  }
+  .skill-value { color: var(--color-text-secondary); }
+
+  /* ---- Experience / Projects ---- */
+  .entry { margin-bottom: 1rem; }
+  .entry-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.2rem;
+  }
+  .entry-title { font-weight: 700; font-size: 0.92rem; color: var(--color-text); }
+  .entry-title a {
+    color: var(--color-accent); font-size: 0.82rem; font-weight: 500;
+  }
+  .entry-date { font-size: 0.82rem; color: var(--color-text-muted); font-style: italic; }
+  .entry-subtitle {
+    font-size: 0.85rem; color: var(--color-text-secondary); font-style: italic;
+    margin-bottom: 0.35rem;
+  }
+
+  .entry-bullets { padding-left: 1.1rem; }
+  .entry-bullets li {
+    font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.65;
+    margin-bottom: 0.25rem; position: relative;
+  }
+  .entry-bullets li::marker { color: var(--color-accent); }
+
+  /* ---- Education ---- */
+  .edu-entry { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+  .edu-school { font-weight: 700; font-size: 0.92rem; }
+  .edu-degree { font-size: 0.85rem; color: var(--color-text-secondary); }
+
+  /* ---- Certifications ---- */
+  .cert-list { padding-left: 1.1rem; }
+  .cert-list li {
+    font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.65;
+    margin-bottom: 0.25rem;
+  }
+  .cert-list li::marker { color: var(--color-accent); }
+  .cert-list li strong { color: var(--color-text); font-weight: 700; }
+
+  /* ---- Print styles ---- */
+  @media print {
+    body { background: #fff; color: #000; }
+    .top-bar { display: none; }
+    .resume-wrapper { margin: 0; padding: 0; max-width: 100%; }
+    .resume-paper {
+      box-shadow: none; border: none; border-radius: 0;
+      padding: 0.5in; background: #fff;
+    }
+    .resume-paper::before { display: none; }
+    .resume-name { color: #000; }
+    .resume-subtitle { color: #444; }
+    .resume-contact { color: #444; }
+    .resume-contact a { color: #0066cc; }
+    .resume-section-title { color: #000; border-color: #000; }
+    .resume-summary, .skill-value, .entry-subtitle, .entry-bullets li, .cert-list li, .edu-degree { color: #333; }
+    .skill-label, .entry-title, .edu-school, .cert-list li strong { color: #000; }
+    .entry-date { color: #666; }
+    .entry-bullets li::marker, .cert-list li::marker { color: #000; }
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 640px) {
+    .resume-paper { padding: 2rem 1.5rem; }
+    .resume-name { font-size: 1.6rem; }
+    .resume-contact { flex-direction: column; gap: 0.25rem; }
+    .skill-row { flex-direction: column; gap: 0.1rem; }
+    .skill-label { min-width: auto; }
+    .entry-header { flex-direction: column; }
+    .top-bar { padding: 0.6rem 1rem; }
+    .top-bar-right { gap: 0.5rem; }
+    .btn-download, .btn-back { padding: 0.45rem 1rem; font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="index.html">
+      <span class="logo-icon">RC</span>
+      Rajneesh Chauhan
+    </a>
+  </div>
+  <div class="top-bar-right">
+    <a href="index.html" class="btn-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Portfolio
+    </a>
+    <button class="btn-download" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PDF
+    </button>
+  </div>
+</div>
+
+<!-- Resume Content -->
+<div class="resume-wrapper">
+  <div class="resume-paper">
+
+    <!-- Header -->
+    <div class="resume-header">
+      <h1 class="resume-name">Rajneesh Chauhan</h1>
+      <p class="resume-subtitle">Data Analyst</p>
+      <div class="resume-contact">
+        <span>+91-6388981586</span>
+        <span class="sep">|</span>
+        <a href="mailto:rajnishchauhan912556@gmail.com">rajnishchauhan912556@gmail.com</a>
+        <span class="sep">|</span>
+        <a href="https://linkedin.com/in/rajneesh-chauhan" target="_blank">LinkedIn</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/Codex610" target="_blank">GitHub</a>
+        <span class="sep">|</span>
+        <a href="index.html">Portfolio</a>
+        <span class="sep">|</span>
+        <span>Lucknow, India</span>
+      </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="resume-section">
+      <h2 class="resume-section-title">Professional Summary</h2>
+      <p class="resume-summary">
+        Entry-level Data Analyst skilled in Python, SQL, Tableau, and Power BI — delivered 17% revenue lift, 22% churn reduction, and 14% attrition improvement via funnel analysis, RFM segmentation, cohort analysis, and predictive modeling. Experienced in A/B testing, hypothesis testing, KPI reporting, and ETL automation.
+      </p>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="resume-section">
+      <h2 class="resume-section-title">Technical Skills</h2>
+      <div class="skills-table">
+        <div class="skill-row">
+          <span class="skill-label">Programming & Query:</span>
+          <span class="skill-value">Python, SQL, MySQL, DAX, Excel (Advanced — Pivot Tables, VLOOKUP, Power Query)</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Analysis & Statistics:</span>
+          <span class="skill-value">EDA, A/B Testing, Hypothesis Testing, Cohort Analysis, RFM Analysis, Funnel Analysis, Regression, Statistical Modeling, Data Visualization</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Visualization & BI:</span>
+          <span class="skill-value">Tableau, Power BI, Plotly Dash, Matplotlib, Seaborn, Google Sheets</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Libraries & Tools:</span>
+          <span class="skill-value">Pandas, NumPy, Scikit-learn, XGBoost, SHAP, SQLite, Git, GitHub, Jupyter, VS Code</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Data Engineering:</span>
+          <span class="skill-value">ETL Pipelines, Apache Spark, Airflow, AWS S3, REST APIs (FastAPI)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Work Experience -->
+    <div class="resume-section">
+      <h2 class="resume-section-title">Work Experience</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Data Science Intern</span>
+          <span class="entry-date">Aug 2025 — Oct 2025</span>
+        </div>
+        <div class="entry-subtitle">Skillfied Mentor · Remote</div>
+        <ul class="entry-bullets">
+          <li>Gathered business requirements from stakeholders; conducted EDA and data wrangling on 50,000+ records — identified missing values, outliers, and class imbalance, improving data quality and enabling reliable reporting.</li>
+          <li>Built analytical dashboards to track model performance post-deployment; delivered data storytelling for cross-functional stakeholders, reducing false positive rate by 8% and cutting manual reporting by 3 hrs/week.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="resume-section">
+      <h2 class="resume-section-title">Projects</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">E-Commerce Sales & Customer Behaviour Analytics Dashboard <a href="https://github.com/Codex610/E-Commerce-Sales-Customer-Behaviour-Analytics-Dashboard" target="_blank">GitHub</a></span>
+          <span class="entry-date">Mar 2026</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Analyzed 500,000+ transaction records using SQL and Pandas; performed cohort analysis, funnel analysis, and RFM segmentation — identified high-value customer segments, reducing churn risk by 22%.</li>
+          <li>Built interactive Tableau dashboard tracking 15+ KPIs (revenue, AOV, CLV, conversion rate); adopted as primary business reporting tool by sales and marketing stakeholders.</li>
+          <li>Applied Chi-Square and Mann-Whitney U tests to validate A/B test results, surfacing a 17% revenue lift from checkout funnel optimization; automated weekly ETL pipeline cutting reporting time by 6 hrs/week.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">HR Analytics & Employee Attrition Analysis <a href="https://github.com/Codex610/HR-Analytics-Employee-Attrition-Analysis" target="_blank">GitHub</a></span>
+          <span class="entry-date">Feb 2026</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Built Logistic Regression and XGBoost models achieving 89% accuracy on IBM HR dataset (1,470 records); used SHAP values to surface actionable insights supporting data-driven HR decision-making.</li>
+          <li>Designed Power BI executive dashboard with attrition heatmaps and 6-month trend forecasting; enabled proactive workforce planning, reducing projected attrition by 14%.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Retail Operations SQL Analytics <a href="https://github.com/Codex610/retail-sql-analytics" target="_blank">GitHub</a></span>
+          <span class="entry-date">June 2026</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Designed and executed 20 SQL queries across 5 analytical modules (window functions, CTEs, correlated subqueries, derived tables) on a normalized 5-table retail schema — uncovering compounding revenue concentration risk across customer, product, and category dimensions.</li>
+          <li>Identified 37.8% product stock-out rate, 15.21% freight-to-revenue inefficiency in key states, and three data quality issues — findings documented as a structured business insights report with actionable recommendations per module.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="resume-section">
+      <h2 class="resume-section-title">Education</h2>
+      <div class="edu-entry">
+        <div>
+          <div class="edu-school">Lucknow Institute of Technology (AKTU), Lucknow, India</div>
+          <div class="edu-degree">B.Tech, Information Technology (CGPA: 8.0)</div>
+        </div>
+        <span class="entry-date">2022 — 2026</span>
+      </div>
+    </div>
+
+    <!-- Certifications & Achievements -->
+    <div class="resume-section">
+      <h2 class="resume-section-title">Certifications & Achievements</h2>
+      <ul class="cert-list">
+        <li><strong>Google Data Analytics Professional Certificate</strong> — Google/Coursera (Pursuing, 2026) — data cleaning, analysis, SQL, R, Tableau, and data visualization.</li>
+        <li><strong>Deloitte Australia Data Analytics Job Simulation</strong> (Forage, Jul 2025) — Excel, Tableau, and data storytelling in a real consulting context.</li>
+        <li><strong>HackerRank SQL Gold Badge</strong> — all SQL levels (Basic to Advanced): joins, aggregations, window functions, CTEs.</li>
+        <li><strong>Machine Learning & Data Science Certificate</strong> — GeeksforGeeks (2025–2026).</li>
+        <li><strong>150+ LeetCode problems solved</strong> (arrays, DP, graphs); active Kaggle contributor on real-world competition datasets.</li>
+      </ul>
+    </div>
+
+  </div><!-- /resume-paper -->
+</div><!-- /resume-wrapper -->
+
+</body>
+</html>
