@@ -273,22 +273,32 @@ planning, reducing projected attrition by 14%.
         </div>
         <div class="project-body">
           <div class="project-number">04</div>
-          <h3 class="project-title">A/B Testing Framework</h3>
+          <h3 class="project-title">Hospital Readmission Risk Analysis</h3>
           <p class="project-desc">
-            Surfaced a statistically significant 14% lift in user engagement across 20,000+ behavioral records using Z-Test, Welch’s T-Test, Effect
-Size, and Power Analysis at 95% confidence
+            - Analysed 101,766 diabetic patient encounters across a 4-table MySQL star schema (dim_patient, fact_visits, dim_clinical, dim_medication), writing 7 business SQL queries to identify clinical and operational readmission drivers.
           </p>
           <p class="project-desc">
-            Automated full experimentation lifecycle — data generation, testing, visualization, PDF reporting — exposed as REST API endpoints
-via FastAPI; applied Bayesian inference to reduce false discovery rate.
+            - Discovered that prior inpatient visit history is the strongest readmission predictor — patients with 3+ prior visits have 3.2x higher readmission rate (25.8% vs 7.9%), a finding actionable without any ML model.
           </p>
+          <p class="project-desc">
+            - Built XGBoost readmission risk model on 71,518 deduplicated patient records with SMOTE-balanced training (10:1 class imbalance); engineered 13 features including discharge risk flags, medication-inpatient interaction terms, and ICD-9 groupings.
+          </p>
+          <p class="project-desc">
+            - Optimised classification threshold from 0.50 → 0.31 using F1 maximisation, doubling true positive rate from 20% to 42.2% (531 readmissions correctly flagged).
+          </p>
+          <p class="project-desc">
+            - Quantified ₹4.25 Cr estimated cost avoided at ₹80,000 per prevented readmission; documented model limitation (AUC 0.569 consistent with administrative-data ceiling in published literature) and recommended clinical notes integration as next step.
+          <div class="project-tags">
+            <p class="project-desc">
+            - Delivered 3-page interactive Power BI dashboard (Executive Overview · Clinical Deep Dive · Patient Risk Intelligence) with DAX measures, risk tier segmentation, and SHAP-explained confusion matrix for non-technical hospital operations stakeholders.
           <div class="project-tags">
             <span class="tag">Python</span>
-            <span class="tag">A/B Testing</span>
-            <span class="tag">Bayesian</span>
-            <span class="tag">FastAPI</span>
+            <span class="tag">SQL</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">Power BI</span>
           </div>
-          <a href="https://github.com/Codex610/A-B-Testing-and-Hypothesis-Testing-on-Product-Metrics" target="_blank" rel="noopener" class="project-link">
+          <a href="https://github.com/Codex610/hospital-readmission" target="_blank" rel="noopener" class="project-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             View on GitHub
           </a>
